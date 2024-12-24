@@ -210,60 +210,6 @@ int main()
     
 }
 
-//int main() {
-//    // Создаем задачу
-//    setlocale(LC_ALL, "RU");
-//    glp_prob* lp;
-//    lp = glp_create_prob();
-//    glp_set_obj_dir(lp, GLP_MAX); // Устанавливаем максимизацию
-//
-//    // Определяем количество переменных
-//    glp_add_cols(lp, 2); // 2 переменные
-//    glp_set_col_name(lp, 1, "x1");
-//    glp_set_col_name(lp, 2, "x2");
-//
-//    // Устанавливаем коэффициенты целевой функции
-//    glp_set_obj_coef(lp, 1, 3); // z = 3*x1
-//    glp_set_obj_coef(lp, 2, 5); // z = 5*x2
-//
-//    // Определяем количество ограничений
-//    glp_add_rows(lp, 2); // 2 ограничения
-//    glp_set_row_name(lp, 1, "constraint1");
-//    glp_set_row_bnds(lp, 1, GLP_UP, 0.0, 10.0); // Ограничение 1: x1 + 2*x2 ≤ 10
-//
-//    glp_set_row_name(lp, 2, "constraint2");
-//    glp_set_row_bnds(lp, 2, GLP_UP, 0.0, 15.0); // Ограничение 2: 3*x1 + x2 ≤ 15
-//
-//    // Задаем коэффициенты ограничений
-//    int ia[1 + 4], ja[1 + 4]; // Индексы от 1 до 4
-//    double ar[1 + 4];
-//
-//    // Ограничение 1: x1 + 2*x2
-//    ia[1] = 1; ja[1] = 1; ar[1] = 1.0; // x1
-//    ia[2] = 1; ja[2] = 2; ar[2] = 2.0; // 2*x2
-//
-//    // Ограничение 2: 3*x1 + x2
-//    ia[3] = 2; ja[3] = 1; ar[3] = 3.0; // 3*x1
-//    ia[4] = 2; ja[4] = 2; ar[4] = 1.0; // x2
-//
-//    // Загружаем ограничения в задачу
-//    glp_load_matrix(lp, 4, ia, ja, ar); // 4 - количество ненулевых элементов
-//
-//    // Решаем задачу
-//    glp_simplex(lp, NULL);
-//
-//    // Получаем и выводим результат
-//    std::cout << "Целевая функция = " << glp_get_obj_val(lp) << std::endl;
-//    std::cout << "x1 = " << glp_get_col_prim(lp, 1) << std::endl;
-//    std::cout << "x2 = " << glp_get_col_prim(lp, 2) << std::endl;
-//
-//    // Освобождаем память
-//    glp_delete_prob(lp);
-//    return 0;
-//}
-
-
-
 bool Proverka_optimum(vector<double> t)
 {
     bool flag = true;
